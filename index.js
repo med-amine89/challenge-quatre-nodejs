@@ -42,10 +42,11 @@ app.post('/upload', upload.single('image'), (req, res, next) => {
         console.error(error);
     }
 });
-
+// upload multiples images 
 app.post('/multiple-upload', upload.array("images",3), (req,res)=> {
 console.log(req.files);
-res.send("multiples files upload success");
+res.json({
+  message:  "multiples files upload success"});
 });
 
 
